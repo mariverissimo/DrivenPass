@@ -9,3 +9,13 @@ export async function signUp(req: Request, res: Response, next: NextFunction) {
     next(error)
   }
 }
+
+export async function signIn(req: Request, res: Response, next: NextFunction) {
+  try {
+    const token = await authService.signIn(req.body)
+    return res.status(200).send({ token })
+  } catch (error) {
+    next(error)
+  }
+}
+
