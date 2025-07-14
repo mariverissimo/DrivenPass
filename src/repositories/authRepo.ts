@@ -8,3 +8,10 @@ export async function findByEmail(email: string) {
 export async function createUser(data: Omit<User, 'id'>) {
   return prisma.user.create({ data })
 }
+
+export async function deleteUserAndData(userId: number) {
+  await prisma.$transaction([
+    prisma.credential.deleteMany({ where: { userId } }),
+    prisma.user.delete({ where: { id: userId } })
+  ])
+}

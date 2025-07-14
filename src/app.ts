@@ -5,6 +5,7 @@ import credentialsRouter from './routers/credentialRouter'
 import healthRouter from './routers/healthRouter'
 import { errorHandler } from './middlewares/errorHandler'
 import authRouter from './routers/authRouter'
+import router from './routers'
 
 
 dotenv.config()
@@ -15,8 +16,6 @@ app.use(express.json())
 
 app.use(errorHandler)
 
-app.use(healthRouter)
-app.use(authRouter)
-app.use('/credentials', credentialsRouter)
+app.use(router)
 
 export default app

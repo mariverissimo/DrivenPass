@@ -19,3 +19,14 @@ export async function signIn(req: Request, res: Response, next: NextFunction) {
   }
 }
 
+export async function eraseAccount(req: Request, res: Response, next: NextFunction) {
+  const userId = res.locals.userId
+  try {
+    await authService.eraseAccount(userId)
+    return res.sendStatus(204)
+  } catch (err) {
+    next(err)
+  }
+}
+
+

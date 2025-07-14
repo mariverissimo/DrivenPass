@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { UnauthorizedError, NotFoundError } from '../utils/errors'
 import { ConflictError } from '../utils/errors'
+import { deleteUserAndData } from '../repositories/authRepo'
 
 interface SignUpData {
   name: string
@@ -35,3 +36,8 @@ export async function signIn({ email, password }: SignInData): Promise<string> {
 
   return token
 }
+
+export async function eraseAccount(userId: number) {
+  await deleteUserAndData(userId)
+}
+
