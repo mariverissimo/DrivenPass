@@ -1,11 +1,11 @@
 import { prisma } from '../database/database'
-import { Credential } from '@prisma/client'
+import { Prisma } from '@prisma/client'
 
 export function findByTitleAndUserId(title: string, userId: number) {
   return prisma.credential.findFirst({ where: { title, userId } })
 }
 
-export function create(data: Omit<Credential, 'id'>) {
+export function create(data: Omit<Prisma.CredentialUncheckedCreateInput, 'id'>) {
   return prisma.credential.create({ data })
 }
 
@@ -17,10 +17,14 @@ export function findById(id: number, userId: number) {
   return prisma.credential.findFirst({ where: { id, userId } })
 }
 
-export function update(id: number, userId: number, data: Partial<Credential>) {
+export function update(
+  id: number,
+  userId: number,
+  data: Partial<Prisma.CredentialUncheckedUpdateInput>
+) {
   return prisma.credential.updateMany({
     where: { id, userId },
-    data
+    data,
   })
 }
 
