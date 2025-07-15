@@ -11,7 +11,7 @@ const authRouter = Router()
 
 authRouter.post('/sign-up', validateSchema(signUpSchema), signUp)
 
-authRouter.get('/sign-in', validateSchema(signInSchema), signIn)
+authRouter.post('/sign-in', validateSchema(signInSchema), signIn)
 
 authRouter.delete('/erase', authenticateToken, eraseAccount)
 
