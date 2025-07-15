@@ -36,5 +36,8 @@
   },
   "prisma": {
     "seed": "ts-node-dev prisma/seed.ts"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
