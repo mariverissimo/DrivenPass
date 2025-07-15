@@ -13,6 +13,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types"],
     "types": ["node"],
     "allowJs": false
   },
