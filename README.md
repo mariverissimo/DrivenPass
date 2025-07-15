@@ -7,7 +7,7 @@ Esta é uma API RESTful desenvolvida com TypeScript, Prisma ORM e PostgreSQL, qu
 ## 🚀 Deploy
 
 🔗 Acesse a API hospedada no Render:  
-**https://drivenpass-backend.onrender.com**
+https://drivenpass-6lkd.onrender.com
 
 > Substitua o link acima pelo real após o deploy.
 
