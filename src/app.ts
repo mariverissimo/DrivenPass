@@ -1,10 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import credentialsRouter from './routers/credentialRouter'
-import healthRouter from './routers/healthRouter'
 import { errorHandler } from './middlewares/errorHandler'
-import authRouter from './routers/authRouter'
 import router from './routers'
 
 
